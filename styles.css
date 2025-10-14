@@ -168,6 +168,19 @@ nav a:focus {
 .pub-citation em { color: var(--text-muted); font-style: italic; }
 .pub-title { font-weight: 600; color: var(--primary); }
 
+a {
+  color: inherit;              /* makes links use the same text color */
+  text-decoration: underline;  /* keeps underline visible */
+  text-decoration-color: var(--border); /* subtle, not too bold */
+  text-underline-offset: 2px;  /* moves underline slightly lower for style */
+  font-weight: 600;
+}
+
+a:hover, a:focus {
+  text-decoration-color: var(--primary); /* hover accent color */
+}
+
+/* 
 .links a {
   color: var(--primary);
   text-decoration: none;
@@ -178,11 +191,36 @@ nav a:focus {
 .links a:hover,
 .links a:focus {
   text-decoration: underline;
-}
+} */
 
 /* News */
-.update { margin-bottom: 1.25rem; }
-.date { color: var(--text-muted); font-size: .875rem; font-weight: 600; margin-bottom: .25rem; }
+.update {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;                 /* space between date and text */
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+}
+
+.update .date {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;            /* keeps date fixed in width */
+  min-width: 120px;          /* controls date column width */
+  margin: 0;
+}
+
+.update p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+
+
+
 
 /* Contact */
 .contact-info { display: grid; gap: .75rem; }
@@ -250,7 +288,19 @@ footer {
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.4rem; }
   nav { gap: 1rem; }
+
+  .update {
+    flex-direction: column;
+    border-left: none;
+    padding-left: 0;
+  }
+  .update .date {
+    color: var(--text-muted);
+    min-width: auto;
+  }
 }
+
+
 
 @media (orientation: portrait) {
   .hero-image img {
