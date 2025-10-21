@@ -1,113 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paul Chukwuemeka Ezeamii</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div class="nav-container">
-      <h1 class="site-title">Paul Chukwuemeka Ezeamii</h1>
-      <nav role="navigation" aria-label="Main navigation">
-        <!-- <a href="#about">About</a> -->
-        <!-- <a href="#publications">Publications</a> -->
-        <!-- <a href="#updates">Updates</a> -->
-         <a href="mailto:pe3814@rit.edu">Email</a>
-         <a href="https://linkedin.com/in/ezeamiipaul">LinkedIn</a>
-        <a href="/Files/Paul Ezeamii CV.pdf" target="_blank">View CV</a>
-        <!-- <a href="#contact">Contact</a> -->
-        
-      </nav>
-    </div>
-  </header>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul Chukwuemeka Ezeamii</title>
 
-  <main id="main">
-    <section id="about">
-      <div class="hero">
-        <div class="hero-image">
-          <img src="Files/Paul.jpg" alt="Portrait of Paul Ezeamii">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      // Tailwind config
+      tailwind.config = {
+        darkMode: "class", // enable class-based dark mode
+      };
+
+      // Theme handling: check localStorage or system
+      const theme = localStorage.getItem("theme");
+      if (
+        theme === "dark" ||
+        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+
+  <body
+    class="bg-white dark:bg-gray-900 text-black dark:text-white font-sans leading-relaxed transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 backdrop-blur-md"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 px-6 py-4"
+      >
+        <h1
+          class="text-4xl font-bold whitespace-nowrap text-gray-900 dark:text-gray-100"
+        >
+          Paul Chukwuemeka Ezeamii
+        </h1>
+
+        <div class="flex items-center gap-6">
+          <nav
+            role="navigation"
+            aria-label="Main navigation"
+            class="flex flex-wrap gap-6 text-base font-medium"
+          >
+            <a
+              href="mailto:pe3814@rit.edu"
+              class="border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400 transition"
+              >Email</a
+            >
+            <a
+              href="https://linkedin.com/in/ezeamiipaul"
+              class="border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400 transition"
+              >LinkedIn</a
+            >
+            <a
+              href="/Files/Paul Ezeamii CV.pdf"
+              target="_blank"
+              class="border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400 transition"
+              >View CV</a
+            >
+          </nav>
+
+          <!-- Theme toggle -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+            aria-label="Toggle Dark Mode"
+          >
+            🌞
+          </button>
         </div>
-        <div class="hero-text">
-        <h2>About Me</h2>
-          <p>
-            Hello! I am a Ph.D. student in the Computing and Information Sciences program at the Rochester Institute of Technology (RIT),
-            advised by <a href="https://kristenshinohara.com/">Dr. Kristen Shinohara</a>. My research explores adaptive systems for
-            neurodivergent workflows, with the goal of designing technologies that better align with the diverse cognitive
-            patterns of neurodivergent individuals. I am also a member of the Center for Accessibility and Inclusion Research
-            (<a href="https://cair.rit.edu/">CAIR</a>) Lab where I engage in Human-Computer Interaction (HCI)
-            and Accessibility research.
-          </p>
-          <h3>Research Interests</h3>
-          <p>
-            My research investigates how adaptive and context-aware technologies can support neurodivergent individuals, particularly Ph.D.
-            students with ADHD, in managing time, tasks, and focus throughout their workflows. By examining how these students
-            navigate unstructured research environments, I aim to inform the design of human-centered systems that foster productivity and accessibility.
-          </p>
-          <div>
-            <span class="tag">HCI</span>
-            <span class="tag">Accessibility</span>
-            <span class="tag">ADHD</span>
-            <span class="tag">Neurodiversity</span>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main id="main" class="max-w-6xl mx-auto px-6 py-12">
+      <!-- About Section -->
+      <section id="about" class="mb-16">
+        <div
+          class="grid md:grid-cols-[30%,1fr] gap-8 md:gap-12 items-stretch mb-16"
+        >
+          <!-- Image -->
+          <div
+            class="relative rounded-xl bg-white dark:bg-gray-800 shadow-lg p-2 transform md:rotate-[1.5deg] hover:rotate-0 hover:scale-[1.02] transition duration-300"
+          >
+            <img
+              src="Files/Paul.jpg"
+              alt="Portrait of Paul Ezeamii"
+              class="rounded-lg w-full h-full object-cover object-top transition duration-300 hover:scale-[1.02]"
+            />
+          </div>
+
+          <!-- Text -->
+          <div class="flex flex-col justify-center">
+            <h2
+              class="text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6"
+            >
+              About Me
+            </h2>
+            <p class="mb-4 text-[1.1rem] leading-8">
+              Hello! I am a Ph.D. student in the Computing and Information
+              Sciences program at the Rochester Institute of Technology (RIT),
+              advised by
+              <a
+                href="https://kristenshinohara.com/"
+                class="underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-blue-600 dark:hover:decoration-blue-400 font-semibold">
+                Dr. Kristen Shinohara.
+              </a> 
+              My research explores adaptive systems for neurodivergent
+              workflows, with the goal of designing technologies that better
+              align with the diverse cognitive patterns of neurodivergent
+              individuals. I am also a member of the Center for Accessibility and
+              Inclusion Research
+              (<a
+                href="https://cair.rit.edu/"
+                class="underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-blue-600 dark:hover:decoration-blue-400 font-semibold"
+                >CAIR</a>)
+              Lab where I engage in Human-Computer Interaction (HCI) and
+              Accessibility research.
+            </p>
+
+            <h3 class="text-lg font-semibold mt-6 mb-3">
+              Research Interests
+            </h3>
+            <p class="mb-4 text-[1.1rem] leading-8">
+              My research investigates how adaptive and context-aware
+              technologies can support neurodivergent individuals, particularly
+              Ph.D. students with ADHD, in managing time, tasks, and focus
+              throughout their workflows. By examining how these students
+              navigate unstructured research environments, I aim to inform the
+              design of human-centered systems that foster productivity and
+              accessibility.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                >HCI</span
+              >
+              <span
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                >Accessibility</span
+              >
+              <span
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                >ADHD</span
+              >
+              <span
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                >Neurodiversity</span
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <div class="publication">
-        <div class="pub-tag" data-venue="assets">ASSETS 2025</div>
-        <div class="pub-citation">
-          <p>
-            <strong>Paul Ezeamii</strong> and Kristen Shinohara. 2025.
-            Navigating STEM Doctoral Programs with ADHD: Barriers, Workflow Challenges, and Adaptive Strategies.
-            <em>In The 27th International ACM SIGACCESS Conference on Computers and Accessibility</em>.
-          </p>
+      <!-- Publications -->
+      <section id="publications" class="mb-16">
+        <h2
+          class="text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6"
+        >
+          Publications
+        </h2>
+
+        <div class="mb-8">
+          <div
+            class="inline-block text-white uppercase font-bold text-xs px-2 py-1 rounded-md mb-2 bg-blue-600 dark:bg-blue-500"
+          >
+            ASSETS 2025
+          </div>
+          <div class="text-black dark:text-white mb-3">
+            <p>
+              <strong>Paul Ezeamii</strong> and Kristen Shinohara. 2025.
+              <span class="text-black dark:text-white"
+                >Navigating STEM Doctoral Programs with ADHD: Barriers, Workflow
+                Challenges, and Adaptive Strategies.</span
+              >
+              <em class="italic text-black dark:text-white"
+                >In The 27th International ACM SIGACCESS Conference on Computers
+                and Accessibility.</em
+              >
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="text-blue-600 dark:text-blue-400 font-semibold hover:underline underline-offset-2"
+              >📄 PDF</a
+            >
+            <a
+              href="#"
+              class="text-blue-600 dark:text-blue-400 font-semibold hover:underline underline-offset-2"
+              >🔗 DOI</a
+            >
+          </div>
         </div>
-        <div class="links">
-          <a href="#">📄 PDF</a>
-          <a href="#">🔗 DOI</a>
+      </section>
+
+      <!-- Updates -->
+      <section id="updates">
+        <h2
+          class="text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6"
+        >
+          Recent Updates
+        </h2>
+
+        <div class="space-y-4">
+          <div>
+            <div class="text-black dark:text-white text-sm font-semibold mb-1">
+              October 10, 2025
+            </div>
+            <p>🎤 I presented our ASSETS 2025 paper in the GCCIS PhD Colloquium Series at RIT.</p>
+          </div>
+
+          <div>
+            <div class="text-black dark:text-white text-sm font-semibold mb-1">
+              June 18, 2025
+            </div>
+            <p>
+              🎉 Our paper titled “Navigating STEM Doctoral Programs with ADHD: Barriers, Workflow Challenges, and Adaptive Strategies” was accepted to ASSETS 2025!
+            </p>
+          </div>
+
+          <div>
+            <div class="text-black dark:text-white text-sm font-semibold mb-1">
+              August 27, 2024
+            </div>
+            <p>💪 I passed my RPA exam.</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="updates">
-      <h2>Recent Updates</h2>
-      <div class="update">
-        <div class="date">October 10, 2025</div>
-        <p>🎤 I presented our ASSETS 2025 paper in the GCCIS PhD Colloquium Series at RIT.</p>
-      </div>
-      <div class="update">
-        <div class="date">June 18, 2025</div>
-        <p>🎉 Our paper titled “Navigating STEM Doctoral Programs with ADHD: Barriers, Workflow Challenges, and Adaptive Strategies” was accepted to ASSETS 2025!</p>
-      </div>
-      <div class="update">
-        <div class="date">August 27, 2024</div>
-        <p>💪 I passed my RPA exam</p>
-      </div>
+    <!-- Footer -->
+    <footer
+      class="border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400 text-sm py-8"
+    >
+      &copy; 2025 Paul Ezeamii. Last updated on October 14, 2025.
+    </footer>
 
-    
-    </section>
+    <!-- Toggle Script -->
+    <script>
+      const btn = document.getElementById("theme-toggle");
+      const root = document.documentElement;
 
-    <!-- <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <strong>Email:</strong>
-          <a href="mailto:pe3814@rit.edu">pe3814@rit.edu</a>
-        </div>
-        <div class="contact-item">
-          <strong>Links:</strong>
-          <a href="https://linkedin.com/in/ezeamiipaul">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </main> -->
+      function setIcon() {
+        btn.textContent = root.classList.contains("dark") ? "🌙" : "🌞";
+      }
 
-  <footer>
-    <p>&copy; 2025 Paul Ezeamii. Last updated on October 14, 2025.</p>
-  </footer>
-</body>
+      btn.addEventListener("click", () => {
+        root.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          root.classList.contains("dark") ? "dark" : "light"
+        );
+        setIcon();
+      });
+
+      setIcon();
+    </script>
+  </body>
 </html>
