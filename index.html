@@ -4,26 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paul Chukwuemeka Ezeamii</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/fonts.css" />
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-      // Tailwind config
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
-              sans: ["IBM Plex Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+              serif: ["Besley", "Georgia", "serif"],
+              drafting: ["Drafting", "Besley", "serif"],
+            },
+            letterSpacing: {
+              tightest: "-0.02em",
             },
           },
         },
       };
 
-      // Theme handling: check localStorage or system
+      // Dark mode theme handling
       const theme = localStorage.getItem("theme");
       if (
         theme === "dark" ||
@@ -34,11 +38,11 @@
         document.documentElement.classList.remove("dark");
       }
     </script>
-
   </head>
 
-  <body class="antialiased tracking-tight font-sans bg-white dark:bg-gray-900 text-black dark:text-white leading-relaxed transition-colors duration-300">
-
+  <body
+    class="bg-white dark:bg-gray-900 text-black dark:text-white font-serif leading-relaxed antialiased transition-colors duration-300"
+  >
     <!-- Header -->
     <header
       class="sticky top-0 z-50 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 backdrop-blur-md"
@@ -47,7 +51,7 @@
         class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 px-6 py-4"
       >
         <h1
-          class="text-xl md:text-4xl font-bold whitespace-nowrap text-gray-900 dark:text-gray-100"
+          class="font-drafting text-3xl md:text-4xl font-semibold tracking-tightest text-gray-900 dark:text-gray-100"
         >
           Paul Chukwuemeka Ezeamii
         </h1>
@@ -56,7 +60,7 @@
           <nav
             role="navigation"
             aria-label="Main navigation"
-            class="flex flex-wrap gap-6 text-base font-medium"
+            class="flex flex-wrap gap-6 text-base font-medium font-serif"
           >
             <a
               href="mailto:pe3814@rit.edu"
@@ -76,7 +80,7 @@
             >
           </nav>
 
-          <!-- Theme toggle -->
+          <!-- Theme Toggle -->
           <button
             id="theme-toggle"
             class="p-1 rounded-full border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
@@ -109,33 +113,35 @@
           <!-- Text -->
           <div class="flex flex-col justify-center">
             <h2
-              class="text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6"
+              class="font-drafting text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6 tracking-tightest"
             >
               About Me
             </h2>
+
             <p class="mb-4 text-[1.1rem] leading-8">
               Hello! I am a Ph.D. student in the Computing and Information
               Sciences program at the Rochester Institute of Technology (RIT),
               advised by
               <a
                 href="https://kristenshinohara.com/"
-                class="underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-blue-600 dark:hover:decoration-blue-400 font-semibold">
-                Dr. Kristen Shinohara.
-              </a> 
+                class="underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-blue-600 dark:hover:decoration-blue-400 font-medium"
+                >Dr. Kristen Shinohara</a
+              >.
               My research explores adaptive systems for neurodivergent
               workflows, with the goal of designing technologies that better
-              align with the diverse cognitive patterns of neurodivergent
+              align with diverse cognitive patterns of neurodivergent
               individuals. I am also a member of the Center for Accessibility and
               Inclusion Research
               (<a
                 href="https://cair.rit.edu/"
-                class="underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-blue-600 dark:hover:decoration-blue-400 font-semibold"
-                >CAIR</a>)
+                class="underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-blue-600 dark:hover:decoration-blue-400 font-medium"
+                >CAIR</a
+              >)
               Lab where I engage in Human-Computer Interaction (HCI) and
               Accessibility research.
             </p>
 
-            <h3 class="text-lg font-semibold mt-6 mb-3">
+            <h3 class="font-drafting text-xl font-medium mt-6 mb-3">
               Research Interests
             </h3>
             <p class="mb-4 text-[1.1rem] leading-8">
@@ -150,19 +156,19 @@
 
             <div class="flex flex-wrap gap-2 mt-2">
               <span
-                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium font-serif"
                 >HCI</span
               >
               <span
-                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium font-serif"
                 >Accessibility</span
               >
               <span
-                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium font-serif"
                 >ADHD</span
               >
               <span
-                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium"
+                class="inline-block bg-gray-50 dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium font-serif"
                 >Neurodiversity</span
               >
             </div>
@@ -173,25 +179,25 @@
       <!-- Publications -->
       <section id="publications" class="mb-16">
         <h2
-          class="text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6"
+          class="font-drafting text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6 tracking-tightest"
         >
           Publications
         </h2>
 
         <div class="mb-8">
           <div
-            class="inline-block text-white uppercase font-bold text-xs px-2 py-1 rounded-md mb-2 bg-blue-600 dark:bg-blue-500"
+            class="inline-block text-white uppercase font-drafting text-xs px-2 py-1 rounded-md mb-2 bg-blue-600 dark:bg-blue-500"
           >
             ASSETS 2025
           </div>
-          <div class="text-black dark:text-white mb-3">
+          <div class="mb-3">
             <p>
               <strong>Paul Ezeamii</strong> and Kristen Shinohara. 2025.
-              <span class="text-black dark:text-white"
+              <span
                 >Navigating STEM Doctoral Programs with ADHD: Barriers, Workflow
                 Challenges, and Adaptive Strategies.</span
               >
-              <em class="italic text-black dark:text-white"
+              <em
                 >In The 27th International ACM SIGACCESS Conference on Computers
                 and Accessibility.</em
               >
@@ -200,12 +206,12 @@
           <div class="flex gap-4">
             <a
               href="#"
-              class="text-blue-600 dark:text-blue-400 font-semibold hover:underline underline-offset-2"
+              class="text-blue-600 dark:text-blue-400 font-semibold hover:underline underline-offset-2 font-serif"
               >📄 PDF</a
             >
             <a
               href="#"
-              class="text-blue-600 dark:text-blue-400 font-semibold hover:underline underline-offset-2"
+              class="text-blue-600 dark:text-blue-400 font-semibold hover:underline underline-offset-2 font-serif"
               >🔗 DOI</a
             >
           </div>
@@ -215,21 +221,21 @@
       <!-- Updates -->
       <section id="updates">
         <h2
-          class="text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6"
+          class="font-drafting text-2xl font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-6 tracking-tightest"
         >
           Recent Updates
         </h2>
 
         <div class="space-y-4">
           <div>
-            <div class="text-black dark:text-white text-sm font-semibold mb-1">
+            <div class="font-serif text-sm font-semibold mb-1">
               October 10, 2025
             </div>
             <p>🎤 I presented our ASSETS 2025 paper in the GCCIS PhD Colloquium Series at RIT.</p>
           </div>
 
           <div>
-            <div class="text-black dark:text-white text-sm font-semibold mb-1">
+            <div class="font-serif text-sm font-semibold mb-1">
               June 18, 2025
             </div>
             <p>
@@ -238,7 +244,7 @@
           </div>
 
           <div>
-            <div class="text-black dark:text-white text-sm font-semibold mb-1">
+            <div class="font-serif text-sm font-semibold mb-1">
               August 27, 2024
             </div>
             <p>💪 I passed my RPA exam.</p>
@@ -249,12 +255,12 @@
 
     <!-- Footer -->
     <footer
-      class="border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400 text-sm py-8"
+      class="border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400 text-sm py-8 font-serif"
     >
       &copy; 2025 Paul Ezeamii. Last updated on October 14, 2025.
     </footer>
 
-    <!-- Toggle Script -->
+    <!-- Theme Toggle Script -->
     <script>
       const btn = document.getElementById("theme-toggle");
       const root = document.documentElement;
